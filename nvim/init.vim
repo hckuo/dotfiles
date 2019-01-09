@@ -23,17 +23,17 @@ Plug 'w0rp/ale'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 call plug#end()
 
-let mapleader                 = "\<space>"
-let g:config_path             = $HOME."/.config/nvim/init.vim"
-let g:ctrlp_map               = '<C-F>'
-let g:ctrlp_cmd               = 'CtrlPBuffer'
+let mapleader                   = "\<space>"
+let g:config_path               = $HOME."/.config/nvim/init.vim"
+let g:ctrlp_map                 = '<C-F>'
+let g:ctrlp_cmd                 = 'CtrlPBuffer'
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_mruf_relative = 1
-let g:ctrlp_max_depth = 40
-let g:ctrlp_max_files = 0
-let g:NERDSpaceDelims         = 1
-let g:NERDCompactSexyComs     = 1
-let g:NERDToggleCheckAllLines = 1
+let g:ctrlp_mruf_relative       = 1
+let g:ctrlp_max_depth           = 40
+let g:ctrlp_max_files           = 0
+let g:NERDSpaceDelims           = 1
+let g:NERDCompactSexyComs       = 1
+let g:NERDToggleCheckAllLines   = 1
 
 
 command! EditConfig execute 'edit' g:config_path
@@ -60,7 +60,7 @@ nnoremap <leader>b% :vnew<CR>
 " File-related mapping
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>fq :q<CR>
-nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>ff :CtrlPCurWD<CR>
 
 
 xmap ga <Plug>(EasyAlign)
@@ -82,5 +82,4 @@ set expandtab
 set autoindent smartindent
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
-colorscheme solarized
 
