@@ -2,8 +2,7 @@
 
 install_vimrc() {
         echo "Installing vimrc"
-        mkdir -p $HOME/.config/nvim;
-        cp nvim/init.vim $HOME/.config/nvim;
+        cp vim/vimrc $HOME/.vimrc;
 }
 
 install_tmux() {
