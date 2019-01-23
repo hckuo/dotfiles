@@ -44,7 +44,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " Toggle-related mapping
 nnoremap <leader>tb :TagbarToggle<CR>
-nnoremap <leader>tn :set invnumber<CR>
+nnoremap <leader>tn :set invnumber invrelativenumber<CR>
 
 " Buffer-related mapping
 nnoremap <leader>bn :bnext<CR>
@@ -80,6 +80,7 @@ set timeoutlen=1500
 set cc=80
 set expandtab
 set autoindent smartindent
+set number relativenumber
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
