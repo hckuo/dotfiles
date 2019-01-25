@@ -21,6 +21,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
 Plug 'w0rp/ale'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let mapleader                   = "\<space>"
@@ -83,4 +85,5 @@ set autoindent smartindent
 set number relativenumber
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+colorscheme onedark
 
