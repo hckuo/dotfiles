@@ -23,19 +23,23 @@ Plug 'w0rp/ale'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'lervag/vimtex'
 call plug#end()
 
-let mapleader                   = "\<space>"
-let g:config_path               = $HOME."/.vimrc"
-let g:ctrlp_map                 = '<C-F>'
-let g:ctrlp_cmd                 = 'CtrlPBuffer'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_mruf_relative       = 1
-let g:ctrlp_max_depth           = 40
-let g:ctrlp_max_files           = 0
-let g:NERDSpaceDelims           = 1
-let g:NERDCompactSexyComs       = 1
-let g:NERDToggleCheckAllLines   = 1
+let mapleader                         = "\<space>"
+let g:config_path                     = $HOME."/.vimrc"
+let g:ctrlp_map                       = '<C-F>'
+let g:ctrlp_cmd                       = 'CtrlPBuffer'
+let g:ctrlp_clear_cache_on_exit       = 0
+let g:ctrlp_mruf_relative             = 1
+let g:ctrlp_max_depth                 = 40
+let g:ctrlp_max_files                 = 0
+let g:NERDSpaceDelims                 = 1
+let g:NERDCompactSexyComs             = 1
+let g:NERDToggleCheckAllLines         = 1
+let g:polyglot_disabled               = ['latex']
+let g:vimtex_quickfix_open_on_warning = 0
+
 
 
 command! EditConfig execute 'edit' g:config_path
@@ -64,6 +68,8 @@ nnoremap <leader>fs :w<CR>
 nnoremap <leader>fq :q<CR>
 nnoremap <leader>ff :CtrlPCurWD<CR>
 
+" Remove trailing space
+nnoremap <leader>rts :%s/\s\+$//e<CR>
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
