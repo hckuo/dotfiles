@@ -2,8 +2,10 @@
 
 install_vimrc() {
         echo "Installing vimrc"
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
+        if ! [ -f ~/.vim/autoload/plug.vim ]; then
+            curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
+        fi
         cp vim/vimrc $HOME/.vimrc;
 }
 
