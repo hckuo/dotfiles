@@ -89,7 +89,9 @@ set cc=80
 set expandtab
 set autoindent smartindent
 set number relativenumber
+set spell spelllang=en_us
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+autocmd FileType plaintex,tex,latex syntax spell toplevel
 colorscheme onedark
 
