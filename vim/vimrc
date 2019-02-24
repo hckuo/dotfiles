@@ -24,6 +24,9 @@ Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 let mapleader                         = "\<space>"
@@ -34,7 +37,8 @@ let g:ctrlp_clear_cache_on_exit       = 0
 let g:ctrlp_mruf_relative             = 1
 let g:ctrlp_max_depth                 = 40
 let g:ctrlp_max_files                 = 0
-# ctrlp ignores files in gitignore
+
+" ctrlp ignores files in gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:NERDSpaceDelims                 = 1
@@ -42,6 +46,12 @@ let g:NERDCompactSexyComs             = 1
 let g:NERDToggleCheckAllLines         = 1
 let g:polyglot_disabled               = ['latex']
 let g:vimtex_quickfix_open_on_warning = 0
+let g:UltiSnipsExpandTrigger          = "<c-b>"
+let g:UltiSnipsJumpForwardTrigger     = "<c-b>"
+let g:UltiSnipsJumpBackwardTrigger    = "<c-z>"
+let g:tex_flavor                      = "latex"
+
+
 
 
 
@@ -86,12 +96,14 @@ set cursorline
 set tabstop=4
 set shiftwidth=4
 set background=dark
-set mouse=a
 set timeoutlen=1500
 set cc=80
 set expandtab
 set autoindent smartindent
 set number relativenumber
+set completeopt+=menuone
+set completeopt+=noselect
+
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
