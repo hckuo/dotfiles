@@ -103,6 +103,7 @@ set autoindent smartindent
 set number relativenumber
 set completeopt+=menuone
 set completeopt+=noselect
+set hlsearch
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
