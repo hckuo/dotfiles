@@ -81,6 +81,9 @@ nnoremap <leader>fs :w<CR>
 nnoremap <leader>fq :q<CR>
 nnoremap <leader>ff :CtrlPCurWD<CR>
 
+" Makefile
+nnoremap <leader>mm :make<CR>
+
 " Remove trailing space
 nnoremap <leader>rts :%s/\s\+$//e<CR>
 
