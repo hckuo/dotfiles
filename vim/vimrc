@@ -90,6 +90,7 @@ nmap ga <Plug>(EasyAlign)
 syntax on
 filetype on
 filetype indent on
+set shell = /usr/bin/env bash
 set wildignore+=*.o
 set autowriteall
 set cursorline
