@@ -63,7 +63,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " Toggle-related mapping
 nnoremap <leader>tb :TagbarToggle<CR>
-nnoremap <leader>tn :set number<CR>
+nnoremap <leader>tn :set invnumber<CR>
 
 " Buffer-related mapping
 nnoremap <leader>bn :bnext<CR>
@@ -106,7 +106,6 @@ set autoindent smartindent
 set completeopt+=menuone
 set completeopt+=noselect
 set hlsearch
-set number
 set cursorline
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
@@ -119,3 +118,4 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
     " highlight SpellBad cterm=underline
 " endfunction
 
+colorscheme gruvbox
