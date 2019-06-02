@@ -101,5 +101,3 @@ alias vpnil="sudo openconnect -u hckuo2 --authgroup 1_SplitTunnel_Default https:
 brightness() {
     echo $1 | sudo tee /sys/class/backlight/intel_backlight/brightness
 }
-
-set -o vi
