@@ -12,12 +12,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ctags.vim'
 Plug 'majutsushi/tagbar'
 Plug 'raimondi/delimitmate'
-Plug 'airblade/vim-gitgutter'
 Plug 'nlknguyen/c-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/vim-easy-align'
-Plug 'easymotion/vim-easymotion'
-Plug 'w0rp/ale'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
@@ -97,7 +94,6 @@ set wildignore+=*.o
 set autowriteall
 set tabstop=4
 set shiftwidth=4
-set background=dark
 set timeoutlen=1500
 set cc=80
 set expandtab
@@ -117,4 +113,3 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
     " highlight SpellBad cterm=underline
 " endfunction
 
-colorscheme gruvbox
