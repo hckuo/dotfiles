@@ -22,7 +22,6 @@ Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'vim-scripts/awk.vim'
 Plug 'mileszs/ack.vim'
-Plug 'suan/vim-instant-markdown'
 call plug#end()
 
 let mapleader                         = "\<space>"
