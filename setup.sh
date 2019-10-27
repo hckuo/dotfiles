@@ -6,6 +6,7 @@ install_vimrc() {
             curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
         fi
+        [ -f $HOME/.vimrc ] && rm $HOME/.vimrc
         ln -s vim/vimrc $HOME/.vimrc;
 }
 
@@ -14,6 +15,7 @@ install_tmux() {
             git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         fi
         echo "Installing tmux.conf"
+        [ -f $HOME/.tmux.conf ] && rm $HOME/.tmux.conf
         ln -s tmux/tmux.conf $HOME/.tmux.conf;
 }
 
@@ -22,6 +24,7 @@ install_oh_my_zsh() {
         if ! [ -d $HOME/.oh-my-zsh ]; then
         sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
         fi
+        [ -f $HOME/.zshrc ] && rm $HOME/.zshrc
         ln -s zsh/zshrc $HOME/.zshrc
 }
 
