@@ -94,14 +94,15 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -f ~/.secrets ] && source ~/.secrets
 
 alias vpniti="sudo openconnect -u hckuo2 https://itiasa1.iti.illinois.edu"
 
-alias vpnil="cat ~/.uiuc_pwd | sudo openconnect --passwd-on-stdin -u hckuo2 --authgroup 1_SplitTunnel_Default https://vpn.cites.illinois.edu"
+alias vpnil="cat ~/.uiuc_pwd | sudo openconnect --passwd-on-stdin -u hckuo2 \
+    --authgroup 1_SplitTunnel_Default https://vpn.cites.illinois.edu"
 
 alias ls="ls --color=tty -F"
 
-brightness() {
-    echo $1 | sudo tee /sys/class/backlight/intel_backlight/brightness
+open() {
+    xdg-open $@ > /dev/null 2>&1
 }
+
