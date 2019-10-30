@@ -101,16 +101,16 @@ set expandtab
 set autoindent smartindent
 set completeopt+=menuone
 set completeopt+=noselect
-set cursorline
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
-autocmd FileType plaintex,tex,latex call EnableSpellCheck()
-function EnableSpellCheck()
-    set cc=0
-    syntax spell toplevel
-    set spell spelllang=en_us
-    highlight SpellBad cterm=underline
-endfunction
+autocmd FileType plaintex,tex,latex set cc=0
+
+" function EnableSpellCheck()
+    " set cc=0
+    " syntax spell toplevel
+    " set spell spelllang=en_us
+    " highlight SpellBad cterm=underline
+" endfunction
 
