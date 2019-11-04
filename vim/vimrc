@@ -24,6 +24,8 @@ Plug 'vim-scripts/awk.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
 call plug#end()
+set background=dark
+colorscheme gruvbox
 
 let mapleader                         = "\<space>"
 let g:config_path                     = $HOME."/.vimrc"
@@ -106,11 +108,12 @@ autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
 autocmd FileType plaintex,tex,latex set cc=0
+autocmd FileType plaintex,tex,latex call EnableSpellCheck()
 
-" function EnableSpellCheck()
-    " set cc=0
-    " syntax spell toplevel
-    " set spell spelllang=en_us
-    " highlight SpellBad cterm=underline
-" endfunction
+function EnableSpellCheck()
+    set cc=0
+    syntax spell toplevel
+    set spell spelllang=en_us
+    highlight SpellBad cterm=underline
+endfunction
 
