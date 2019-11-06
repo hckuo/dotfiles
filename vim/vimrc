@@ -17,7 +17,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/vim-easy-align'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'vim-scripts/awk.vim'
@@ -38,7 +37,6 @@ let g:ctrlp_max_files                 = 0
 let g:NERDSpaceDelims                 = 1
 let g:NERDCompactSexyComs             = 1
 let g:NERDToggleCheckAllLines         = 1
-let g:polyglot_disabled               = ['latex']
 let g:vimtex_quickfix_open_on_warning = 0
 let g:tex_flavor                      = "latex"
 
@@ -107,11 +105,10 @@ set completeopt+=noselect
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
-autocmd FileType plaintex,tex,latex set cc=0
 autocmd FileType plaintex,tex,latex call EnableSpellCheck()
 
+" functions
 function EnableSpellCheck()
-    set cc=0
     syntax spell toplevel
     set spell spelllang=en_us
     highlight SpellBad cterm=underline
