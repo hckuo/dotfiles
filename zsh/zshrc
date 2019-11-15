@@ -102,6 +102,8 @@ alias vpnil="cat ~/.uiuc_pwd | sudo openconnect --passwd-on-stdin -u hckuo2 \
 
 alias ls="ls --color=tty -F"
 
+alias aria2c="aria2c -x16 -s16"
+
 open() {
     xdg-open $@ > /dev/null 2>&1
 }

@@ -22,6 +22,7 @@ Plug 'lifepillar/vim-mucomplete'
 Plug 'vim-scripts/awk.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
+Plug 'itspriddle/vim-shellcheck'
 call plug#end()
 set background=dark
 colorscheme gruvbox
@@ -106,11 +107,25 @@ autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
 autocmd FileType plaintex,tex,latex call EnableSpellCheck()
+autocmd BufEnter /* call LoadCscope()
 
 " functions
 function EnableSpellCheck()
     syntax spell toplevel
     set spell spelllang=en_us
     highlight SpellBad cterm=underline
+endfunction
+
+function! LoadCscope()
+  let db = findfile("cscope.out", ".;")
+  if (!empty(db))
+    let path = strpart(db, 0, match(db, "/cscope.out$"))
+    set nocscopeverbose " suppress 'duplicate connection' error
+    exe "cs add " . db . " " . path
+    set cscopeverbose
+  " else add the database pointed to by environment variable
+  elseif $CSCOPE_DB != ""
+    cs add $CSCOPE_DB
+  endif
 endfunction
 
