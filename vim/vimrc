@@ -103,7 +103,7 @@ set completeopt+=noselect
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
-autocmd FileType plaintex,tex,latex call EnableSpellCheck()
+autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
 
 " functions
 function EnableSpellCheck()
