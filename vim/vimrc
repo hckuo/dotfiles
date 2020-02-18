@@ -2,7 +2,6 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -82,6 +81,12 @@ nnoremap <leader>mm :make<CR>
 " Remove trailing space
 nnoremap <leader>rts :%s/\s\+$//e<CR>
 
+" open a shell below/top/vertical
+nnoremap <leader>sb  :below terminal<CR>
+nnoremap <leader>st  :terminal<CR>
+nnoremap <leader>sb  :vertical terminal<CR>
+
+
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -99,6 +104,7 @@ set expandtab
 set autoindent smartindent
 set completeopt+=menuone
 set completeopt+=noselect
+set shell=zsh
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
