@@ -84,7 +84,7 @@ nnoremap <leader>rts :%s/\s\+$//e<CR>
 " open a shell below/top/vertical
 nnoremap <leader>sb  :below terminal<CR>
 nnoremap <leader>st  :terminal<CR>
-nnoremap <leader>sb  :vertical terminal<CR>
+nnoremap <leader>sv  :vertical terminal<CR>
 
 
 xmap ga <Plug>(EasyAlign)
