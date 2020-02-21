@@ -102,7 +102,7 @@ alias vpnil="cat ~/.uiuc_pwd | sudo openconnect --passwd-on-stdin -u hckuo2 \
 
 alias ls="ls --color=tty -F"
 
-alias aria2c="aria2c -x16 -s16"
+alias aria2c_16c="aria2c -x16 -s16"
 
 alias sudo="sudo -E"
 

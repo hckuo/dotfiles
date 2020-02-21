@@ -21,6 +21,7 @@ Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
 Plug 'itspriddle/vim-shellcheck'
 Plug 'chazy/cscope_maps'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
 
 let mapleader                         = "\<space>"
