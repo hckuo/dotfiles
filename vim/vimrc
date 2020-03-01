@@ -104,6 +104,9 @@ set expandtab
 set autoindent smartindent
 set completeopt+=menuone
 set completeopt+=noselect
+let g:mucomplete#completion_delay = 1
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
 set shell=zsh
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
