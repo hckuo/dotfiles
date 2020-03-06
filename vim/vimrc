@@ -1,7 +1,10 @@
+set encoding=utf-8
+set guifont="Fira Mono 14"
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -23,6 +26,10 @@ Plug 'itspriddle/vim-shellcheck'
 Plug 'chazy/cscope_maps'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 call plug#end()
+
+set termguicolors
+colorscheme gruvbox
+set background=dark
 
 let mapleader                         = "\<space>"
 let g:config_path                     = $HOME."/.vimrc"
@@ -59,6 +66,7 @@ tnoremap <Esc> <C-\><C-n>
 " Toggle-related mapping
 nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>tn :set invnumber<CR>
+nnoremap <leader>tt  :below terminal<CR>
 
 " Buffer-related mapping
 nnoremap <leader>bn :bnext<CR>
@@ -82,10 +90,6 @@ nnoremap <leader>mm :make<CR>
 " Remove trailing space
 nnoremap <leader>rts :%s/\s\+$//e<CR>
 
-" open a shell below/top/vertical
-nnoremap <leader>sb  :below terminal<CR>
-nnoremap <leader>st  :terminal<CR>
-nnoremap <leader>sv  :vertical terminal<CR>
 
 
 xmap ga <Plug>(EasyAlign)
@@ -109,6 +113,7 @@ let g:mucomplete#completion_delay = 1
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 set shell=zsh
+set hlsearch " highlight search "
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
