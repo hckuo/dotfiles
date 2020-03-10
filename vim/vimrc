@@ -1,9 +1,11 @@
 set encoding=utf-8
-set guifont="Fira Mono 14"
+set guifont="Fira Mono Regular 14"
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
@@ -82,7 +84,7 @@ nnoremap <leader>b% :vnew<CR>
 " File-related mapping
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>fq :q<CR>
-nnoremap <leader>ff :CtrlPCurWD<CR>
+nnoremap <leader>ff :NERDTreeToggle<CR>
 
 " Makefile
 nnoremap <leader>mm :make<CR>
@@ -90,7 +92,9 @@ nnoremap <leader>mm :make<CR>
 " Remove trailing space
 nnoremap <leader>rts :%s/\s\+$//e<CR>
 
-
+imap jj <Esc>
+imap jk <Esc>:
+nnoremap <leader>; :
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
