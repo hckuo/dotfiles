@@ -4,6 +4,13 @@ set guifont="Fira Mono Regular 14"
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
@@ -23,12 +30,14 @@ Plug 'vim-scripts/awk.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
 Plug 'itspriddle/vim-shellcheck'
-Plug 'chazy/cscope_maps'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
+Plug 'joe-skb7/cscope-maps'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 set termguicolors
 colorscheme gruvbox
