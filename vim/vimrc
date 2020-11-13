@@ -12,8 +12,6 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -34,7 +32,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'joe-skb7/cscope-maps'
-Plug 'mxw/vim-jsx'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
