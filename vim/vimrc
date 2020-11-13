@@ -20,7 +20,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ctags.vim'
-Plug 'majutsushi/tagbar'
 Plug 'raimondi/delimitmate'
 Plug 'nlknguyen/c-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
@@ -107,7 +106,6 @@ nmap ga <Plug>(EasyAlign)
 syntax on
 filetype on
 filetype indent on
-set shell=bash
 set wildignore+=*.o
 set autowriteall
 set tabstop=4
