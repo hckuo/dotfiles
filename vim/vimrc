@@ -32,8 +32,10 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'joe-skb7/cscope-maps'
+Plug 'vivien/vim-linux-coding-style'
 call plug#end()
 
+let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 set termguicolors
@@ -127,6 +129,7 @@ set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 set shell=zsh
 set hlsearch " highlight search "
+set cino+=(0
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
