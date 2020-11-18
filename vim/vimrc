@@ -41,7 +41,6 @@ let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 let g:fzf_layout = { 'down': '20%' }
 let g:fzf_buffers_jump = 1
 " }}}
->>>>>>> a0015f7 (use fzf)
 call plug#end()
 
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
