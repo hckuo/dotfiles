@@ -14,7 +14,6 @@ else
 endif
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/ctags.vim'
@@ -33,6 +32,16 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'joe-skb7/cscope-maps'
 Plug 'vivien/vim-linux-coding-style'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" {{{
+map <C-f> :Files<CR>
+map <C-b> :Buffer<CR>
+let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
+let g:fzf_layout = { 'down': '20%' }
+let g:fzf_buffers_jump = 1
+" }}}
+>>>>>>> a0015f7 (use fzf)
 call plug#end()
 
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
@@ -40,19 +49,10 @@ let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 set termguicolors
 colorscheme gruvbox
-set background=dark
 
-let mapleader                         = "\<space>"
+" let mapleader                         = "\<space>"
 let g:config_path                     = $HOME."/.vimrc"
-let g:ctrlp_map                       = '<C-F>'
-let g:ctrlp_cmd                       = 'CtrlPBuffer'
-let g:ctrlp_mruf_relative             = 1
-let g:ctrlp_max_depth                 = 40
-let g:ctrlp_max_files                 = 0
 
-let g:NERDSpaceDelims                 = 1
-let g:NERDCompactSexyComs             = 1
-let g:NERDToggleCheckAllLines         = 1
 let g:vimtex_quickfix_open_on_warning = 0
 let g:tex_flavor                      = "latex"
 
@@ -84,7 +84,6 @@ nnoremap <leader>tt  :below terminal<CR>
 " Buffer-related mapping
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader><tab> :bprevious<CR>
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bd :bdelete<CR>
 "create horizontal buffer"
