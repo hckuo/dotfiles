@@ -20,7 +20,6 @@ Plug 'vim-scripts/ctags.vim'
 Plug 'raimondi/delimitmate'
 Plug 'nlknguyen/c-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'junegunn/vim-easy-align'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/awk.vim'
@@ -32,18 +31,18 @@ Plug 'fatih/vim-go'
 Plug 'rust-lang/rust.vim'
 Plug 'joe-skb7/cscope-maps'
 Plug 'vivien/vim-linux-coding-style'
+let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " {{{
-map <C-f> :Files<CR>
-map <C-b> :Buffer<CR>
+map <leader>f :Files<CR>
+map <leader>b :Buffer<CR>
 let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 let g:fzf_layout = { 'down': '20%' }
 let g:fzf_buffers_jump = 1
 " }}}
 call plug#end()
 
-let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 set termguicolors
@@ -78,7 +77,7 @@ tnoremap <Esc> <C-\><C-n>
 " Toggle-related mapping
 nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>tn :set invnumber<CR>
-nnoremap <leader>tt  :below terminal<CR>
+nnoremap <leader>tt :below terminal<CR>
 
 " Buffer-related mapping
 nnoremap <leader>bn :bnext<CR>
@@ -96,9 +95,6 @@ nnoremap <leader>rts :%s/\s\+$//e<CR>
 imap jj <Esc>
 imap jk <Esc>:
 nnoremap <leader>; :
-
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -120,14 +116,13 @@ set timeoutlen=1500
 set cc=80
 set expandtab
 set autoindent smartindent
-set completeopt+=menuone
-set completeopt+=noselect
-let g:mucomplete#completion_delay = 1
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " If Vim beeps during completion
+"set completeopt+=menuone
+"set completeopt+=noselect
+"set shortmess+=c   " Shut off completion messages
 set shell=zsh
 set hlsearch " highlight search "
 set cino+=(0
+set bg=dark
 
 autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
