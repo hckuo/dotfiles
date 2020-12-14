@@ -110,8 +110,6 @@ filetype on
 filetype indent on
 set wildignore+=*.o
 set autowriteall
-set tabstop=4
-set shiftwidth=4
 set timeoutlen=1500
 set cc=80
 set expandtab
@@ -124,7 +122,7 @@ set hlsearch " highlight search "
 set cino+=(0
 set bg=dark
 
-autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
+autocmd Filetype c,cpp setlocal tabstop=4 noet shiftwidth=4
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
 autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
