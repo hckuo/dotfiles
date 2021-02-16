@@ -35,12 +35,14 @@ let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " {{{
-map <leader>f :Files<CR>
-map <leader>b :Buffer<CR>
-let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
-let g:fzf_layout = { 'down': '20%' }
-let g:fzf_buffers_jump = 1
+    map <leader>f :Files<CR>
+    map <leader>b :Buffer<CR>
+    let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
+    let g:fzf_layout = { 'down': '20%' }
+    let g:fzf_buffers_jump = 1
 " }}}
+Plug 'preservim/tagbar'
+    let g:airline#extensions#tagbar#enabled = 1
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -79,15 +81,10 @@ nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>tn :set invnumber<CR>
 nnoremap <leader>tt :below terminal<CR>
 
-" Buffer-related mapping
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bd :bdelete<CR>
-"create horizontal buffer"
-nnoremap <leader>b" :new<CR>
-"create vertical buffer"
-nnoremap <leader>b% :vnew<CR>
+""create horizontal buffer"
+"nnoremap <leader>b" :new<CR>
+""create vertical buffer"
+"nnoremap <leader>b% :vnew<CR>
 
 " Remove trailing space
 nnoremap <leader>rts :%s/\s\+$//e<CR>
@@ -135,4 +132,3 @@ function EnableSpellCheck()
     set spell spelllang=en_us
     highlight SpellBad cterm=underline
 endfunction
-
