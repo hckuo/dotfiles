@@ -1,0 +1,10 @@
+evdev:input:b0003v04B4p120D*
+  KEYBOARD_KEY_700e0=leftalt
+  KEYBOARD_KEY_700e2=leftctrl
+
+
+
+evdev:atkbd:dmi:*            # built-in keyboard: match all AT keyboards for now
+ KEYBOARD_KEY_1d=leftalt     # bind leftctrl to leftalt
+ KEYBOARD_KEY_38=leftctrl    # bind leftalt to leftctrl
+
