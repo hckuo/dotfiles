@@ -80,6 +80,7 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>tn :set invnumber<CR>
 nnoremap <leader>tt :below terminal<CR>
+nnoremap <leader>mm :!make<CR>
 
 ""create horizontal buffer"
 "nnoremap <leader>b" :new<CR>
@@ -120,6 +121,7 @@ set cino+=(0
 set bg=dark
 set tabstop=4
 set shiftwidth=4
+set nu
 
 autocmd Filetype c,cpp setlocal tabstop=4 noet shiftwidth=4
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
