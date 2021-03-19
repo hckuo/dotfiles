@@ -27,7 +27,16 @@ install_oh_my_zsh() {
         ln -s $BASEDIR/zsh/zshrc $HOME/.zshrc
 }
 
+install_bash_it() {
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+    ~/.bash_it/install.sh
+    cp ./bash/inputrc ~/.inputrc
+    bash_it enable alias git
+    bash_it reload
+}
+
 rm -f $HOME/.zshrc $HOME/.tmux.conf $HOME/.vimrc
 install_vimrc
 install_tmux
-install_oh_my_zsh
+#install_oh_my_zsh
+install_bash_it
