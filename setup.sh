@@ -30,7 +30,7 @@ install_oh_my_zsh() {
 install_bash_it() {
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
     ~/.bash_it/install.sh
-    cp ./bash/inputrc ~/.inputrc
+    ln -s ./bash/inputrc ~/.inputrc
     bash_it enable alias git
     bash_it reload
 }
