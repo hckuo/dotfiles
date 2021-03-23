@@ -31,10 +31,10 @@ install_bash_it() {
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
     ~/.bash_it/install.sh
     ln -s ./bash/inputrc ~/.inputrc
-    bash -c "bash_it enable alias git"
-    bash -c "bash_it enable plugin extract"
-    bash -c "bash_it enable completion ssh"
-    bash -c "bash_it reload"
+    bash_it enable alias git
+    bash_it enable plugin extract
+    bash_it enable completion ssh
+    bash_it reload
 }
 
 rm -f $HOME/.zshrc $HOME/.tmux.conf $HOME/.vimrc
