@@ -33,7 +33,10 @@ install_bash_it() {
     ln -s ./bash/inputrc ~/.inputrc
     bash_it enable alias git
     bash_it enable plugin extract
+    bash_it enable plugin history
+    bash_it enable plugin history_search
     bash_it enable completion ssh
+    bash_it enable completion systemctl
     bash_it reload
 }
 
