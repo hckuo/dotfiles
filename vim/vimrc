@@ -43,6 +43,7 @@ Plug 'junegunn/fzf.vim'
 " }}}
 Plug 'preservim/tagbar'
     let g:airline#extensions#tagbar#enabled = 1
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 let g:deoplete#enable_at_startup = 1
@@ -119,11 +120,8 @@ set shell=zsh
 set hlsearch " highlight search "
 set cino+=(0
 set bg=dark
-set tabstop=4
-set shiftwidth=4
 set nu
 
-autocmd Filetype c,cpp setlocal tabstop=4 noet shiftwidth=4
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
 autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
