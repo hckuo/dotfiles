@@ -188,11 +188,12 @@ bar {
 exec --no-startup-id pasystray
 exec --no-startup-id fcitx
 exec --no-startup-id blueman-applet
+exec --no-startup-id copyq
 exec --no-startup-id feh --bg-scale /usr/share/backgrounds/Imgur\ Album\ \ 120\ High\ Quality\ Nature\ Images/
 
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+m exec thunderbird
-bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+Control+l exec betterlockscreen -l
 set $Locker i3lock && sleep 1
 
