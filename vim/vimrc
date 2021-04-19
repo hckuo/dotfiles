@@ -5,13 +5,6 @@ set guifont="Fira Mono Regular 14"
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
@@ -22,6 +15,12 @@ Plug 'nlknguyen/c-syntax.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'lervag/vimtex'
+        augroup VimCompletesMeTex
+                autocmd!
+                autocmd FileType tex
+                        \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
+        augroup END
+let g:vimtex_toc_enabled = 1
 Plug 'vim-scripts/awk.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-repeat'
@@ -34,6 +33,7 @@ Plug 'vivien/vim-linux-coding-style'
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ackyshake/VimCompletesMe'
 " {{{
     map <leader>f :Files<CR>
     map <leader>b :Buffer<CR>
@@ -116,7 +116,6 @@ set autoindent smartindent
 "set completeopt+=menuone
 "set completeopt+=noselect
 "set shortmess+=c   " Shut off completion messages
-set shell=zsh
 set hlsearch " highlight search "
 set cino+=(0
 set bg=dark
