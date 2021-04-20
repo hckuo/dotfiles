@@ -5,3 +5,5 @@
 open() {
     xdg-open $@ > /dev/null 2>&1
 }
+
+alias cp="xclip -selection clipboard"
