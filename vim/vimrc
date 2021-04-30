@@ -119,7 +119,6 @@ set autoindent smartindent
 set hlsearch " highlight search "
 set cino+=(0
 set bg=dark
-set nu
 
 autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 
