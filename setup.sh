@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 install_vimrc() {
@@ -29,18 +29,20 @@ install_oh_my_zsh() {
 
 install_bash_it() {
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-    ~/.bash_it/install.sh
+    bash ~/.bash_it/install.sh
     ln -s ./bash/inputrc ~/.inputrc
+    sed -i 's/export BASH_IT_THEME=.*/export BASH_IT_THEME=simple/' ~/.bashrc
+    . ~/.bashrc
     bash_it enable alias git
     bash_it enable plugin extract
     bash_it enable plugin history
     bash_it enable plugin history_search
     bash_it enable completion ssh
     bash_it enable completion systemctl
-    bash_it reload
+    ln -s bash/custom/custom.bash ~/.bash_it/custom/custom.bash
 }
 
-rm -f $HOME/.zshrc $HOME/.tmux.conf $HOME/.vimrc
+rm -f $HOME/.zshrc $HOME/.bashrc $HOME/.tmux.conf $HOME/.vimrc
 install_vimrc
 install_tmux
 #install_oh_my_zsh
