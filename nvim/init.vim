@@ -1,81 +1,60 @@
 " Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
+" - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+" Make sure you use single quotes
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+" {{{
+    map <leader>f :Files<CR>
+    map <leader>b :Buffer<CR>
+    let g:fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
+    let g:fzf_layout = { 'down': '20%' }
+    let g:fzf_buffers_jump = 1
+" }}}
+"
+
 Plug 'tpope/vim-surround'
-Plug 'altercation/vim-colors-solarized'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/ctags.vim'
-Plug 'majutsushi/tagbar'
 Plug 'raimondi/delimitmate'
-Plug 'airblade/vim-gitgutter'
-Plug 'nlknguyen/c-syntax.vim'
-Plug 'kassio/neoterm'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'junegunn/vim-easy-align'
-Plug 'easymotion/vim-easymotion'
-Plug 'w0rp/ale'
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'nathanaelkane/vim-indent-guides'
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#manual_complete()
+""""""""""""
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+let g:LanguageClient_serverCommands = {
+      \ 'c': ['clangd'],
+      \ 'python': ['pyls'],
+      \ 'rust': ['rls'],
+      \ }
+  " note that if you are using Plug mapping you should not use `noremap` mappings.
+  nmap <F5> <Plug>(lcn-menu)
+  nmap <C-\>g <Plug>(lcn-definition)
+  nmap <C-\>c <Plug>(lcn-references)
+  let g:LanguageClient_diagnosticsList = 'Disabled'
+
 call plug#end()
 
-let mapleader                   = "\<space>"
-let g:config_path               = $HOME."/.config/nvim/init.vim"
-let g:ctrlp_map                 = '<C-F>'
-let g:ctrlp_cmd                 = 'CtrlPBuffer'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_mruf_relative       = 1
-let g:ctrlp_max_depth           = 40
-let g:ctrlp_max_files           = 0
-let g:NERDSpaceDelims           = 1
-let g:NERDCompactSexyComs       = 1
-let g:NERDToggleCheckAllLines   = 1
-
-
-command! EditConfig execute 'edit' g:config_path
-command! InstallPlugin execute 'source' g:config_path | PlugInstall
-
-" Esc to exit emulated term
-tnoremap <Esc> <C-\><C-n>
-
-" Toggle-related mapping
-nnoremap <leader>tb :TagbarToggle<CR>
-nnoremap <leader>tn :set invnumber<CR>
-
-" Buffer-related mapping
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-nnoremap <leader><tab> :bprevious<CR>
-nnoremap <leader>bl :ls<CR>
-nnoremap <leader>bd :bdelete<CR>
-
-" File-related mapping
-nnoremap <leader>fs :w<CR>
-nnoremap <leader>fq :q<CR>
-nnoremap <leader>ff :CtrlPCurWD<CR>
-
-
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-syntax on
-filetype on
-filetype indent on
-set wildignore+=*.o
-set autowriteall
-set cursorline
-set tabstop=4
-set shiftwidth=4
-set background=dark
-set mouse=a
-set timeoutlen=1500
-set cc=80
-set expandtab
-set autoindent smartindent
-autocmd Filetype c,cpp setlocal tabstop=8 noet shiftwidth=8
-autocmd BufRead,BufNewFile *.h,*.c set filetype=c
-
+autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
+" functions
+function EnableSpellCheck()
+    syntax spell toplevel
+    set spell spelllang=en_us
+    highlight SpellBad cterm=underline
+endfunction
