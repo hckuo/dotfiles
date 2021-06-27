@@ -42,7 +42,7 @@ install_bash_it() {
     git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
     bash ~/.bash_it/install.sh
     ln -sf $BASEDIR/bash/inputrc ~/.inputrc
-    sed -i 's/export BASH_IT_THEME=.*/export BASH_IT_THEME=simple/' ~/.bashrc
+    sed -i 's/export BASH_IT_THEME=.*/export BASH_IT_THEME=codeword/' ~/.bashrc
     . ~/.bashrc
     bash_it enable alias git
     bash_it enable plugin extract

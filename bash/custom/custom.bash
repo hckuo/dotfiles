@@ -14,3 +14,4 @@ bind "set completion-ignore-case on"
 bind "set menu-complete-display-prefix on"
 export FZF_DEFAULT_COMMAND='rg --files'
 export EDITOR='nvim'
+alias vim='nvim'
