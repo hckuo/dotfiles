@@ -22,8 +22,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'raimondi/delimitmate'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'sheerun/vim-polyglot'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -42,6 +44,7 @@ let g:LanguageClient_serverCommands = {
       \ 'c': ['clangd'],
       \ 'python': ['pyls'],
       \ 'rust': ['rls'],
+      \ 'tex': ['texlab'],
       \ }
   " note that if you are using Plug mapping you should not use `noremap` mappings.
   nmap <F5> <Plug>(lcn-menu)
