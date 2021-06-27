@@ -23,6 +23,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'raimondi/delimitmate'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
+Plug 'vivien/vim-linux-coding-style'
+" for heruristic indent
+Plug 'tpope/vim-sleuth'
+Plug 'rafi/awesome-vim-colorschemes'
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
@@ -49,11 +53,15 @@ let g:LanguageClient_serverCommands = {
   " note that if you are using Plug mapping you should not use `noremap` mappings.
   nmap <F5> <Plug>(lcn-menu)
   nmap <C-\>g <Plug>(lcn-definition)
+  nmap <C-]> <Plug>(lcn-definition)
   nmap <C-\>c <Plug>(lcn-references)
   let g:LanguageClient_diagnosticsList = 'Disabled'
+  let g:LanguageClient_loggingLevel = 'INFO'
 
 call plug#end()
+colorscheme gruvbox
 
+let g:c_syntax_for_h = 1
 autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
 " functions
 function EnableSpellCheck()
