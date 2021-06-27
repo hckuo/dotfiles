@@ -52,10 +52,6 @@ nnoremap <leader>bp :bprevious<CR>
 nnoremap <leader><tab> :bprevious<CR>
 nnoremap <leader>bl :ls<CR>
 nnoremap <leader>bd :bdelete<CR>
-"create horizontal buffer"
-nnoremap <leader>b" :new<CR>
-"create vertical buffer"
-nnoremap <leader>b% :vnew<CR>
 
 " File-related mapping
 nnoremap <leader>fs :w<CR>
