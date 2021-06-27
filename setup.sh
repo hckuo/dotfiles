@@ -48,6 +48,7 @@ install_bash_it() {
     bash_it enable plugin extract
     bash_it enable plugin history
     bash_it enable completion ssh
+    bash_it enable completion git
     ln -sf $BASEDIR/bash/custom/custom.bash ~/.bash_it/custom/custom.bash
 }
 
