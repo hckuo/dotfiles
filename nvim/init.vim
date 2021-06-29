@@ -38,14 +38,15 @@ inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ deoplete#manual_complete()
-""""""""""""
+"""""""""""""
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 
+let g:LanguageClient_useVirtualText = "No"
 let g:LanguageClient_serverCommands = {
-      \ 'c': ['clangd'],
+      \ 'c': ['ccls'],
       \ 'python': ['pyls'],
       \ 'rust': ['rls'],
       \ 'tex': ['texlab'],
