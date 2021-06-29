@@ -62,6 +62,8 @@ call plug#end()
 colorscheme gruvbox
 
 let g:c_syntax_for_h = 1
+set colorcolumn=81
+
 autocmd FileType plaintex,tex,latex,text call EnableSpellCheck()
 " functions
 function EnableSpellCheck()
