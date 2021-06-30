@@ -17,6 +17,7 @@ Plug 'junegunn/fzf.vim'
 " }}}
 "
 
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
