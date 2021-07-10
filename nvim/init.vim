@@ -45,12 +45,12 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
-let g:LanguageClient_useVirtualText = "No"
 let g:LanguageClient_serverCommands = {
       \ 'c': ['ccls'],
       \ 'python': ['pyls'],
       \ 'rust': ['rls'],
       \ 'tex': ['texlab'],
+      \ 'plaintex': ['texlab'],
       \ }
   " note that if you are using Plug mapping you should not use `noremap` mappings.
   nmap <F5> <Plug>(lcn-menu)
@@ -59,6 +59,8 @@ let g:LanguageClient_serverCommands = {
   nmap <C-\>c <Plug>(lcn-references)
   let g:LanguageClient_diagnosticsList = 'Disabled'
   let g:LanguageClient_loggingLevel = 'INFO'
+  let g:LanguageClient_autoStart = 1
+  let g:LanguageClient_useVirtualText = "No"
 
 call plug#end()
 colorscheme gruvbox
